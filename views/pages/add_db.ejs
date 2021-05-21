@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../components/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../components/header'); %>
+</header>
+
+<main>
+  <div class="jumbotron-fluid jumbotron">
+      <h3>Add new NoSQL database to the ranking</h3>
+    <form action="/add_db" method="post">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input name="name" type="text" class="form-control" id="name" placeholder="Enter name">
+        </div>
+        <div class="form-group">
+          <label for="rating">Rating</label>
+          <select name="rating" class="form-control" id="rating">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="owner">Onwer</label>
+          <select name="owner" class="form-control" id="owner">
+            <% for(var i=0; i<owners.length; i++) {%>
+              <option><%= owners[i].name%></option>
+          <% } %>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+      </form>
+  </div>
+</main>
+
+<footer>
+  <%- include('../components/footer'); %>
+</footer>
+
+</body>
+</html>
