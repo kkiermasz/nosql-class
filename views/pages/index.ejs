@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../components/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../components/header'); %>
+</header>
+
+<main>
+  <div class="jumbotron-fluid jumbotron">
+    <ul class="list-group">
+        <% for(var i=0; i<databases.length; i++) {%>
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1"><%= databases[i].name%></h5>
+                  <small><%= databases[i].timestamp%></small>
+                </div>
+                <p class="mb-1">Rate: <%= databases[i].rating%></p>
+                <small>Owner: <a href="/owners/"><%= databases[i].owner.name%></a></small>
+            </a>
+        <% } %>       
+      </ul>
+  </div>
+</main>
+
+<footer>
+  <%- include('../components/footer'); %>
+</footer>
+
+</body>
+</html>

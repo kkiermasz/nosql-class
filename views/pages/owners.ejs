@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../components/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../components/header'); %>
+</header>
+
+<main>
+  <div class="jumbotron-fluid jumbotron">
+    <ul class="list-group">
+        <% for(var i=0; i<owners.length; i++) {%>
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <h5 class="mb-1"><%= owners[i].name%></h5>
+                <% for(var j=0; j<owners[i].databases; j++) {%>
+                        <p class="mb-1"><%= owners[i].databases[j].name%></p>
+                <% } %>
+            </a>
+        <% } %>
+      </ul>
+  </div>
+</main>
+
+<footer>
+  <%- include('../components/footer'); %>
+</footer>
+
+</body>
+</html>
